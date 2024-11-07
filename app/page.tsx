@@ -3,12 +3,16 @@ import Image from "next/image";
 import Logo from "@/assets/logo.svg";
 import LandingImg from "@/assets/main.svg";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Home = () => {
   return (
     <main>
-      <header className="max-w-6xl mx-auto px-4 sm:px-8 py-6">
+      <header className="flex items-center justify-between max-w-6xl mx-auto px-4 sm:px-8 py-6">
         <Image src={Logo} alt="Logo" />
+        <div>
+          <ThemeToggle />
+        </div>
       </header>
       <section className="max-w-6xl mx-auto px-4 sm:px-8 h-screen -mt-20 grid lg:grid-cols-[1fr,400px] items-center">
         <div>
