@@ -2,8 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import {z} from "zod";
-
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -21,7 +20,7 @@ const formSchema = z.object({
   }),
 });
 
-function CreateJobForm() {
+const CreateJobForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,5 +52,5 @@ function CreateJobForm() {
       </form>
     </Form>
   );
-}
+};
 export default CreateJobForm;
