@@ -10,12 +10,18 @@ const SideBar = () => {
   const pathName = usePathname();
 
   return (
-    <aside className="py-4 px-8 bg-muted h-full">
+    <aside className="flex flex-col items-center align-items py-4 px-8 bg-muted h-full">
       <Image src={Logo} alt="logo" />
-      <div>
+      <div className="flex flex-col mt-20 gap-y-4 w-full">
         {links.map((link) => (
-          <Button key={link.href} asChild>
-            <Link href={link.href}></Link>
+          <Button
+            key={link.href}
+            asChild
+            variant={pathName == link.href ? "default" : "link"}
+          >
+            <Link href={link.href} className="flex items-center gap-x-2 ">
+              {link.icon} <span className="capitalize">{link.label}</span>
+            </Link>
           </Button>
         ))}
       </div>

@@ -457,7 +457,7 @@ export default Navbar;
 
 2. **Install the Dropdown-Menu Component:**
 
-   - Install it using `npx shadcn-ui@latest add dropdown-menu`
+   - Install it using `npx shadcn@latest add dropdown-menu`
 
 3. **Import necessary modules and components:**
 

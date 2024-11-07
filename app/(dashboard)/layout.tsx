@@ -1,12 +1,12 @@
 import SideBar from "@/components/Sidebar";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/Navbar";
 
 import { PropsWithChildren } from "react";
 
 const layout = ({ children }: PropsWithChildren) => {
   return (
     <main className="grid lg:grid-cols-5">
-      <div className="hidden lg:block lg:col-span-1 lg:min-h-screen">
+      <div className="hidden items-center lg:block lg:col-span-1 lg:min-h-screen">
         <SideBar />
       </div>
 
