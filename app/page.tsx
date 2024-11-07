@@ -15,7 +15,7 @@ const Home = () => {
           <h1 className="capitalize text-4xl md:text-6xl font-bold">
             Job <span className="text-primary">tracking</span> app
           </h1>
-          <p className="leading-loose max-w-md mt-4">
+          <p className=" leading-loose max-w-md mt-4">
             sdfa sdfasd fsdf sd s fsdfs f sfs f dfsd fsdfasdfadsf fad sfs fds
             fsd f sfaddsa safd
           </p>
