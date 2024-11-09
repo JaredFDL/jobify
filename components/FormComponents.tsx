@@ -1,38 +1,33 @@
-import type { Control } from "react-hook-form";
+import { Control } from 'react-hook-form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from '@/components/ui/select';
 import {
   FormControl,
   FormField,
+  FormItem,
   FormLabel,
   FormMessage,
-  FormItem,
-} from "./ui/form";
-import { Input } from "./ui/input";
+} from '@/components/ui/form';
+import { Input } from './ui/input';
 
-interface CustomFormFieldProps {
+type CustomFormFieldProps = {
   name: string;
   control: Control<any>;
-}
+};
 
-interface CustomFormSelectProps extends CustomFormFieldProps {
-  items: string[];
-  labelText?: string;
-}
-
-export const CustomerFormField = ({ name, control }: CustomFormFieldProps) => {
+export function CustomFormField({ name, control }: CustomFormFieldProps) {
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel className="capitalize font-semibold">{name}</FormLabel>
+          <FormLabel className='capitalize'>{name}</FormLabel>
           <FormControl>
             <Input {...field} />
           </FormControl>
@@ -41,23 +36,28 @@ export const CustomerFormField = ({ name, control }: CustomFormFieldProps) => {
       )}
     />
   );
+}
+
+type CustomFormSelectProps = {
+  name: string;
+  control: Control<any>;
+  items: string[];
+  labelText?: string;
 };
 
-export const CustomerFormSelect = ({
+export function CustomFormSelect({
   name,
   control,
   items,
   labelText,
-}: CustomFormSelectProps) => {
+}: CustomFormSelectProps) {
   return (
     <FormField
       control={control}
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel className="capitalize font-semibold">
-            {labelText || name}
-          </FormLabel>
+          <FormLabel className='capitalize'>{labelText || name}</FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value}>
             <FormControl>
               <SelectTrigger>
@@ -65,16 +65,20 @@ export const CustomerFormSelect = ({
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              {items.map((item) => (
-                <SelectItem key={item} value={item}>
-                  {item}
-                </SelectItem>
-              ))}
+              {items.map((item) => {
+                return (
+                  <SelectItem key={item} value={item}>
+                    {item}
+                  </SelectItem>
+                );
+              })}
             </SelectContent>
           </Select>
+
           <FormMessage />
         </FormItem>
       )}
     />
   );
-};
+}
+export default CustomFormSelect;

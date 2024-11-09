@@ -2,9 +2,9 @@ import LinksDropdown from "./LinksDropdown";
 import { UserButton } from "@clerk/nextjs";
 import ThemeToggle from "./ThemeToggle";
 
-const NavBar = () => {
+function Navbar() {
   return (
-    <nav className="bg-muted flex items-center justify-between px-4 py-4 sm:px-8">
+    <nav className="bg-muted py-4 sm:px-16 lg:px-24 px-4 flex items-center justify-between">
       <div>
         <LinksDropdown />
       </div>
@@ -14,6 +14,5 @@ const NavBar = () => {
       </div>
     </nav>
   );
-};
-
-export default NavBar;
+}
+export default Navbar;
